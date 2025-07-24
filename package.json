@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.1.0",
+    "nightwatch": "^3.12.2"
+  }
+}
