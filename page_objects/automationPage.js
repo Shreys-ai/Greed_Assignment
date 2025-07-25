@@ -19,7 +19,7 @@ module.exports = {
 
     async validatePageTitle(expectedText) {
       const title = await this.api.getTitle();
-      console.log("title is "+ title)
+      console.log("title is " + title)
       // this.api.assert.equal(title, string);
       return this.assert.titleEquals(expectedText);
     },
