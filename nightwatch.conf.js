@@ -89,7 +89,7 @@ module.exports = {
       webdriver: {
         start_process: true,
         server_path: '',
-        port:9515,
+        port: 9515,
         cli_args: [
           // --verbose
         ]
