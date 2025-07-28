@@ -63,7 +63,8 @@ module.exports = {
           require: [
             'features/nightwatch/step_definitions/*.js'],
           auto_start_session: true,
-          parallel: 2
+          parallel: 2,
+          format: ['json:reports/cucumber_report.json']
         }
       }
     },

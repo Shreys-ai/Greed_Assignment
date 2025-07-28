@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx nightwatch -e chrome --format @cucumber/pretty-formatter --format json:reports/cucumber_report.json",
-    "report": "node generate-report.js"
+    "generate-report": "npx cucumber-html-reporter --theme bootstrap --jsonFile reports/cucumber_report.json --output reports/cucumber_report.html",
+    "generate-html-report": "node generateReport.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "description": "",
   "devDependencies": {
     "@cucumber/cucumber": "^12.1.0",
+    "@cucumber/pretty-formatter": "^2.0.1",
     "cucumber-html-reporter": "^7.2.0",
     "geckodriver": "^5.0.0",
     "nightwatch": "^3.12.2"

@@ -1,3 +1,5 @@
 .vscode/
 logs/
 node_modules/
+/logs/
+
