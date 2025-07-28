@@ -1,5 +1,5 @@
 const reporter = require('cucumber-html-reporter');
-const browser = process.env.BROWSER || 'Unknown'; // get from env
+const browser = process.env.BROWSER || 'Unknown';
 
 const options = {
   theme: 'bootstrap',
