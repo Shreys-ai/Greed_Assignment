@@ -16,7 +16,6 @@ module.exports = {
       return this.api.window.maximize();
     },
 
-
     async validatePageTitle(expectedText) {
       const title = await this.api.getTitle();
       console.log("title is " + title)
@@ -45,7 +44,8 @@ module.exports = {
     },
 
     async getBrowserLogs() {
-      const logs = this.api.getLog('browser');
+
+      
       return await logs;
     }
   }]

@@ -35,6 +35,15 @@ Then('User validates all link is working and redirect to proper URL', async () =
 
 When('User Fetches JS\\/console error on browser developer tools', async () => {
     const automation = browser.page.automationPage();
-    const value = await automation.getBrowserLogs();
-    console.log(value);
+    // Get all performance logs
+    const logs = browser.getLog('browser');
+    const value = await logs;
+    console.log(value)
+    // browser.getLog('browser', function (logEntriesArray) {
+    //     console.log('Log length: ' + logEntriesArray);
+
+    //     console.log('Log length: ' + logEntriesArray);        // logEntriesArray.forEach(function (log) {
+    //     //     console.log('[' + log.level + '] ' + log.timestamp + ' : ' + log.message);
+        // });
+    // });
 });

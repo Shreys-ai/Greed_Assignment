@@ -1,5 +1,7 @@
 // https://nightwatchjs.org/gettingstarted/configuration/
 
+// const { firefox } = require("nightwatch");
+
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
@@ -96,6 +98,25 @@ module.exports = {
       }
     },
 
+    firefox: {
+      desiredCapabilities: {
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+          log: { level: 'trace' },
+          args: ['-devtools', '-console']
+        }
+      },
+      loggingPrefs: {
+        performance: 'ALL',
+        browser: 'ALL'
+      },
+      webdriver: {
+        start_process: true,
+        server_path: require('geckodriver').path,
+        log_path: './logs/geckodriver.log'  // 👈 stores logs in a file
+      }
+    },
+
     //////////////////////////////////////////////////////////////////////////////////
     // Configuration for using the browserstack.com cloud service                    |
     //                                                                               |
@@ -113,8 +134,10 @@ module.exports = {
       // https://www.browserstack.com/automate/capabilities?tag=selenium-4
       desiredCapabilities: {
         'bstack:options': {
-          userName: '${BROWSERSTACK_USERNAME}',
-          accessKey: '${BROWSERSTACK_ACCESS_KEY}'
+          userName: process.env.BROWSERSTACK_USERNAME,
+          accessKey: process.env.BROWSERSTACK_ACCESS_KEY,
+          os: 'Windows',
+          osVersion: '11',
         }
       },
 
