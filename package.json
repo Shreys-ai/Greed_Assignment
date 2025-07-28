@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx nightwatch -e firefox"
+    "test": "npx nightwatch -e browserstack.chrome"
   },
   "keywords": [],
   "author": "",
