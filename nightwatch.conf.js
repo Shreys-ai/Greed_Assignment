@@ -141,7 +141,6 @@ module.exports = {
           osVersion: '11',
         }
       },
-
       disable_error_log: true,
       webdriver: {
         timeout_options: {
