@@ -118,7 +118,7 @@ class AboutMethods < Neo::Koan
 
   if before_ruby_version("2.7")   # https://github.com/edgecase/ruby_koans/issues/12
     def test_calling_private_methods_with_an_explicit_receiver
-      exception = assert_raise(RuntimeError) do
+      exception = assert_raise(NoMethodError) do
         self.my_private_method
       end
       assert_match /private method/, exception.message
